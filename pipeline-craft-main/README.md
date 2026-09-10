@@ -1,5 +1,4 @@
-
-## Le projet
+## Le projet est très interessant
 
 Une petite API REST qui gère des *items*. Le code est volontairement simple — l'intérêt est dans le **pipeline**, pas dans l'application.
 
