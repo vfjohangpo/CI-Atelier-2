@@ -14,3 +14,5 @@ app = FastAPI(
 app.include_router(health.router)
 app.include_router(version.router)
 app.include_router(items.router, prefix="/items", tags=["items"])
+
+#Ceci est un message de test pour le commit
