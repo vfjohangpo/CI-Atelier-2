@@ -21,7 +21,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
       - run: pip install -r requirements-dev.txt
+      - run: pytest --cov=app --cov-report=xml
+      - name: Sauvegarder le rapport de couverture
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
       - run: pytest
 
   build:
