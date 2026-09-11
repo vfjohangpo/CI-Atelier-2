@@ -1,4 +1,6 @@
 import os
+
+
 def test_retry():
     attempt = os.getenv("CI_RETRY_TEST")
 
