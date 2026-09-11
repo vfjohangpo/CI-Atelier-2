@@ -2,6 +2,7 @@
 
 from pydantic import BaseModel, Field
 
+
 class ItemCreate(BaseModel):
     """Schéma de création d'un item."""
 
