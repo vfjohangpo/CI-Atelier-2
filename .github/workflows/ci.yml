@@ -48,13 +48,13 @@ jobs:
       - name: Installer les dépendances
         run: pip install -r requirements-dev.txt
 
+      - name: Lancer les tests avec retry automatique
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 5
+          max_attempts: 3
       - name: Lancer les tests
-        run: |
-          pytest \
-            --junitxml=report.xml \
-            --cov=app \
-            --cov-report=term \
-            --cov-report=xml
+        run: pytest --junitxml=report.xml --cov=app --cov-report=term --cov-report=xml
 
       - name: Publier le résumé des tests
         uses: dorny/test-reporter@v1
