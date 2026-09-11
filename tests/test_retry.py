@@ -1,6 +1,5 @@
 import os
 
-
 def test_retry():
     attempt = os.getenv("CI_RETRY_TEST")
 
@@ -8,4 +7,3 @@ def test_retry():
         raise AssertionError("Échec volontaire pour tester le retry")
 
     assert True
-
