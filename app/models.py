@@ -2,7 +2,6 @@
 
 from pydantic import BaseModel, Field
 
-
 class ItemCreate(BaseModel):
     """Schéma de création d'un item."""
 
@@ -12,18 +11,15 @@ class ItemCreate(BaseModel):
     )
     price: float = Field(..., gt=0, examples=[29.99])
 
-
 class Item(ItemCreate):
     """Schéma complet d'un item avec son identifiant."""
 
     id: int
 
-
 class HealthResponse(BaseModel):
     """Réponse du endpoint /health."""
 
     status: str = "ok"
-
 
 class VersionResponse(BaseModel):
     """Réponse du endpoint /version."""
